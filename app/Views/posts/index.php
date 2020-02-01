@@ -40,7 +40,7 @@
                                 <?php foreach ($posts as $row) { ?>
                                     <tr>
                                         <td><?php echo $row['title']; ?></td>
-                                        <td><?php echo $row['status']; ?></td>
+                                        <td><?php echo ($row['status'] == 2) ? 'Publish':'Draft'; ?></td>
                                         <td><?= $row['created_at'] ?></td>
                                         <td>
                                             <a href="<?php echo base_url('post/edit/' . $row['id']); ?>" class="btn btn-primary btn-sm">Edit</a>

@@ -58,7 +58,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php'))
  * only routes that have been defined here will be available.
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
+$routes->setDefaultController('Post');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -72,7 +72,20 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Post::index');
+$routes->get('/', 'Post::index', ['filter' => 'isLoggedIn']);
+
+$routes->group('post', ['filter' => 'isLoggedIn'], function ($routes) {
+	$routes->get('/', 'Post::index');
+});
+
+$routes->group('login', function ($routes) {
+	$routes->get('/', 'LoginController::index');
+	$routes->post('/', 'LoginController::login');
+});
+
+$routes->group('logout', function ($routes) {
+	$routes->get('/', 'LogoutController::index');
+});
 
 /**
  * --------------------------------------------------------------------

@@ -16,6 +16,7 @@ class Post extends BaseController
     {
         $this->model = new PostModel();
         $this->helpers = ['form', 'url'];
+
     }
 
     public function index()

@@ -9,10 +9,10 @@
         </h2>
         <div class="row">
             <div class="col-md-12">
-                <h2 class="font-weight-bold"><?php echo $post['title']; ?>
+                <h2 class="font-weight-bold"><?php echo $post->title; ?>
                 </h2>
-                <p><?php echo $post['created_at'] . ' by Gun Gun Priatna'; ?></p>
-                <?php echo $post['content']; ?>
+                <p><?php echo $post->created_at . ' by Gun Gun Priatna'; ?></p>
+                <?php echo $post->content; ?>
             </div>
         </div>
     </div>

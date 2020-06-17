@@ -13,7 +13,7 @@
 
                     <div class="col-md-12">
                         <h2 class="text-muted">
-                            <a href="<?php echo base_url('home/detail/' . $post->id); ?>" class="text-reset font-weight-bold">
+                            <a href="<?php echo site_url('post/detail/' . $post->id); ?>" class="text-reset font-weight-bold">
                                 <?php echo $post->title; ?>
                             </a>
                         </h2>

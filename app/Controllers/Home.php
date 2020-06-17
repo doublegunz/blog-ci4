@@ -33,18 +33,4 @@ class Home extends BaseController
 		return view('pages/home', $data);
 	}
 
-	public function detail(int $id)
-	{
-		$post = $this->model->find($id);
-
-		if (! empty($post)) {
-			$data = [
-				'title' => $post['title'],
-				'post' => $post
-			];
-			
-			return view('pages/detail', $data);
-		}
-	}
-
 }

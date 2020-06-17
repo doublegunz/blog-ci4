@@ -6,10 +6,13 @@ class LoginController extends BaseController
 {
     protected $model;
 
+    protected $redirectTo;
+
     public function __construct()
     {
         $this->model = new UserModel();
         $this->helpers = ['form', 'url'];
+        $this->redirectTo = 'Admin/Post';
         
     }
 
@@ -65,6 +68,6 @@ class LoginController extends BaseController
         ];
 
         session()->set($userData);
-        return redirect()->to(base_url('post'));
+        return redirect()->to(base_url($this->redirectTo));
     }
 }

@@ -5,6 +5,11 @@ use CodeIgniter\Config\BaseConfig;
 
 require_once SYSTEMPATH . 'Config/Services.php';
 
+use App\Infrastructure\Persistence\Post\SQLPostRepository;
+use App\Models;
+use App\Models\PostModel;
+use CodeIgniter\Config\BaseService;
+
 /**
  * Services Configuration file.
  *
@@ -18,16 +23,15 @@ require_once SYSTEMPATH . 'Config/Services.php';
  * method format you should use for your service methods. For more examples,
  * see the core Services file at system/Config/Services.php.
  */
-class Services extends CoreServices
+class Services extends BaseService
 {
 
-	//    public static function example($getShared = true)
-	//    {
-	//        if ($getShared)
-	//        {
-	//            return static::getSharedInstance('example');
-	//        }
-	//
-	//        return new \CodeIgniter\Example();
-	//    }
+	public static function postRepository($getShared = true)
+	{
+		if ($getShared) {
+			return static::getSharedInstance('postRepository');
+		}
+
+		return new SQLPostRepository(model((Models\PostModel::class)));
+	}
 }

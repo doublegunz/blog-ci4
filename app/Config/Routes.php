@@ -74,8 +74,17 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
-$routes->group('post', ['filter' => 'isLoggedIn'], function ($routes) {
-	$routes->get('/', 'Post::index');
+$routes->group('admin',function ($routes) {
+	
+	$routes->group('post', ['namespace' => 'App\Controllers\Admin', 'filter' => 'isLoggedIn'], function ($routes) {
+		$routes->get('', 'Post::index', ['as' => 'post-index']);
+		$routes->get('create', 'Post::create', ['as' => 'post-create']);
+		$routes->post('store', 'Post::store', ['as' => 'post-store']);
+		$routes->get('edit/(:num)', 'Post::edit/$1', ['as' => 'post-edit']);
+		$routes->post('update/(:num)', 'Post::update/$1', ['as' => 'post-update']);
+		$routes->get('destroy/(:num)', 'Post::destroy/$1', ['as' => 'post-destroy']);
+	});
+
 });
 
 $routes->group('login', function ($routes) {

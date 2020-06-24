@@ -34,7 +34,7 @@ class Users extends Migration
 			],
 			'updated_at' => [
 				'type' => 'datetime',
-				'null'
+				'null' => TRUE
 			]
 		]);
 

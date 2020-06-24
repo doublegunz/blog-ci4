@@ -18,25 +18,11 @@ class LoginController extends BaseController
 
     public function index()
     {
-        if ($this->isLoggedIn()) {
-            return redirect()->to(base_url('Post'));
-        }
-
         $data = [
             'title' => 'Login'
         ];
 
         return view('auth/login', $data);
-    }
-
-    private function isLoggedIn() : bool
-    {
-        if (session()->get('logged_in')) {
-            return true;
-            # code...
-        }
-
-        return false;
     }
 
     public function login()

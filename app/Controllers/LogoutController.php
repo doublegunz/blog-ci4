@@ -12,6 +12,6 @@ class LogoutController extends BaseController
 
         session()->remove($userData);
 
-        return redirect()->to(base_url('login'));
+        return redirect()->route('login');
     }
 }

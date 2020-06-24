@@ -76,7 +76,7 @@ $routes->get('/', 'Home::index');
 
 $routes->group('admin',function ($routes) {
 	
-	$routes->group('post', ['namespace' => 'App\Controllers\Admin', 'filter' => 'isLoggedIn'], function ($routes) {
+	$routes->group('post', ['namespace' => 'App\Controllers\Admin', 'filter' => 'authenticate'], function ($routes) {
 		$routes->get('', 'Post::index', ['as' => 'post-index']);
 		$routes->get('create', 'Post::create', ['as' => 'post-create']);
 		$routes->post('store', 'Post::store', ['as' => 'post-store']);
@@ -87,13 +87,13 @@ $routes->group('admin',function ($routes) {
 
 });
 
-$routes->group('login', function ($routes) {
-	$routes->get('/', 'LoginController::index');
-	$routes->post('/', 'LoginController::login');
+$routes->group('login', ['filter' => 'redirectIfAuthenticated'], function ($routes) {
+	$routes->get('/', 'LoginController::index', ['as' => 'login']);
+	$routes->post('/', 'LoginController::login', ['as' => 'login']);
 });
 
 $routes->group('logout', function ($routes) {
-	$routes->get('/', 'LogoutController::index');
+	$routes->get('/', 'LogoutController::index', ['as' => 'logout']);
 });
 
 /**

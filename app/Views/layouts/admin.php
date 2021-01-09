@@ -13,13 +13,13 @@
 <body>
 
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">re:code</a>
+        <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">qadrLabs</a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
-                <a class="nav-link" href="<?php echo base_url('logout');?>">Sign out</a>
+                <a class="nav-link" href="<?php echo base_url('logout'); ?>">Sign out</a>
             </li>
         </ul>
     </nav>
@@ -31,7 +31,7 @@
 
 
     <footer class="text-center mt-5">
-        <p><em><small>Seri Tutorial CodeIgniter 4: CRUD CodeIgniter @ re:code</small></em></p>
+        <p><em><small>Seri Tutorial CodeIgniter 4 @ <a href="https://qadrlabs.com/">qadrLabs</a></small></em></p>
     </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

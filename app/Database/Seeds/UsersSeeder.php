@@ -6,7 +6,7 @@ class UsersSeeder extends \CodeIgniter\Database\Seeder
     {
         $data = [
             'name' => 'Administrator',
-            'email' => 'admin@recodespace.com',
+            'email' => 'admin@qadrlabs.com',
             'password' => password_hash('rahasia', PASSWORD_BCRYPT),
         ];
 

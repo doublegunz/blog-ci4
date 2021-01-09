@@ -21,7 +21,7 @@
 
     <footer class="footer mt-auto py-3">
         <div class="container">
-            <span class="text-muted">Simple Blog @ re:code</span>
+            <span class="text-muted">Simple Blog @ <a href="https://qadrlabs.com/">qadrLabs</a></span>
         </div>
     </footer>
 
